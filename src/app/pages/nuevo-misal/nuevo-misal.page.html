@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="cerrar_menu()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Nuevo Misal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input
+      placeholder="Titulo de Misa"
+      type="text"
+      [(ngModel)]="misal.titulo"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input
+      placeholder="Link de Transmisión"
+      type="text"
+      [(ngModel)]="misal.link"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea
+      placeholder="Copia aqui el texto del Misal"
+      type="text"
+      [(ngModel)]="misal.texto"
+    ></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-textarea
+      placeholder="Copia aqui el texto del leccionario"
+      type="text"
+      [(ngModel)]="misal.leccionario"
+    ></ion-textarea>
+  </ion-item>
+  <ion-button class="save" expand="block" (click)="save_misa()"
+    >Guardar y transmitir</ion-button
+  >
+</ion-content>

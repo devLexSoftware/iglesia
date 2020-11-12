@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="cerrar_menu()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>nuevo lugar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Selecciona la fecha</ion-label>
+    <ion-datetime
+      [(ngModel)]="lugar.fecha"
+      displayFormat="DD/MM/YYYY"
+    ></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-input
+      placeholder="Selecciona el numero de asientos"
+      type="number"
+      [(ngModel)]="lugar.asientos"
+    ></ion-input>
+  </ion-item>
+  <ion-button class="save" expand="block" (click)="save_lugar()"
+    >Guardar</ion-button
+  >
+</ion-content>

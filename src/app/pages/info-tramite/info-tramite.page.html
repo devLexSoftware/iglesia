@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{tramite.titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p class="titulo">Requisitos para el Trámite</p>
+  <div class="requisito" *ngFor="let requisito of tramite.requisitos">
+    <img src="../../../assets/imgs/lista.png" alt="" />
+    <span>{{requisito.valor}}</span>
+  </div>
+
+  <p class="titulo">¿Como realizar el tramite?</p>
+  <p class="pasos">{{tramite.pasos}}</p>
+</ion-content>

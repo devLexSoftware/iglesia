@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Misas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Misas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="misas" *ngFor="let misa of misas">
+    <div class="thumb_misa" (click)="previa(misa.id)">
+      <img src="../../../assets/imgs/icon_misal.png" alt="" />
+    </div>
+    <div class="info_misa" (click)="previa(misa.id)">
+      <p>{{misa.titulo}}</p>
+    </div>
+    <div class="delete_misa">
+      <ion-button (click)="presentAlertConfirm(misa.id)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="mostrar_modal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

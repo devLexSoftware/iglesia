@@ -1,0 +1,14 @@
+.tramites {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .tramite {
+    width: 33%;
+    padding: 25px;
+
+    p {
+      text-align: center;
+    }
+  }
+}

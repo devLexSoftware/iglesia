@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>previa_misa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <youtube-player
+    videoId="{{misa.link}}"
+    suggestedQuality="highres"
+    [height]="250"
+  >
+  </youtube-player>
+
+  <div class="texto_misa">
+    <p class="titulo">{{misa.titulo}}</p>
+    <p class="texto">{{misa.texto}}</p>
+  </div>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Aforo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="lugares">
+    <div class="thumb_lugar">
+      <img src="../../../assets/imgs/evento.png" alt="" />
+    </div>
+    <div class="info_lugar">
+      <div class="fecha">
+        <p>{{lugar.fecha}}</p>
+      </div>
+      <div class="asientos">
+        <span>Lugares: {{lugar.asientos}}</span>
+        <span>Disponibles: {{lugar.disponibles}}</span>
+      </div>
+    </div>
+  </div>
+  <ion-button class="save" expand="block" (click)="reservar()"
+    >Reservar</ion-button
+  >
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>previa_misal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <youtube-player
+    videoId="{{misal.link}}"
+    suggestedQuality="highres"
+    [height]="250"
+  >
+  </youtube-player>
+
+  <div class="texto_misa">
+    <p class="titulo">{{misal.titulo}}</p>
+    <p class="texto">{{misal.texto}}</p>
+    <p class="titulo">Leccionario</p>
+    <p class="texto">{{misal.leccionario}}</p>
+  </div>
+</ion-content>

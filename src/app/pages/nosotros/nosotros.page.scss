@@ -1,0 +1,29 @@
+.redes_content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.red-social {
+  width: 70px;
+
+  span {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 800;
+    color: black;
+    text-decoration: unset;
+  }
+}
+
+.titulo {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.texto {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 10px 0;
+  text-align: justify;
+}

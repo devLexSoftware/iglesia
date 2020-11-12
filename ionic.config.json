@@ -1,5 +1,7 @@
 {
   "name": "iglesia",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

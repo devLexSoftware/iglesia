@@ -1,0 +1,16 @@
+ion-input,
+ion-textarea {
+  border: 1px solid #989898;
+  border-radius: 8px;
+  --padding-start: 10px !important;
+}
+
+ion-item {
+  margin: 20px 0;
+  --border-width: unset;
+}
+
+.save {
+  padding: 0 15px;
+  margin: 15px;
+}

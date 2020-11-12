@@ -1,3 +1,32 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Administrador</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/nosotros']">¿Quienes somos?</ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/tabs/tab1']">Noticias</ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item>MeronitasMX</ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item>Contacto</ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle (click)="presentActionSheet()">
+          <ion-item>Ciudades</ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle (click)="logout()">
+          <ion-item>Cerrar Sesión</ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

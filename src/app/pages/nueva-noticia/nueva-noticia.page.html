@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="cerrar_menu()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Nueva Noticia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input
+      placeholder="Titulo Noticia"
+      type="text"
+      [(ngModel)]="noticia.titulo"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea
+      placeholder="Contenido de la noticia"
+      type="text"
+      [(ngModel)]="noticia.contenido"
+    ></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-input
+      placeholder="Link de la noticia"
+      type="text"
+      [(ngModel)]="noticia.link"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <img [src]="DomSanitizer.bypassSecurityTrustUrl(img)" />
+  </ion-item>
+  <ion-button class="save" expand="block" fill="clear" (click)="imgPreAlb()"
+    >Añadir Imagen</ion-button
+  >
+  <ion-button class="save" expand="block" (click)="save_noticia()"
+    >Guardar</ion-button
+  >
+</ion-content>

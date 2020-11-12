@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "iglesia-e7b45": {
+      "hosting": {
+        "app": [
+          "iglesia-e7b45"
+        ]
+      }
+    }
+  }
+}

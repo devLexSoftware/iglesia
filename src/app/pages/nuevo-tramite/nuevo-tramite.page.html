@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="cerrar_menu()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Nuevo Tramite</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input
+      placeholder="Titulo tramite"
+      type="text"
+      [(ngModel)]="tramite.titulo"
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-textarea
+      placeholder="Pasos a realizar"
+      type="text"
+      [(ngModel)]="tramite.pasos"
+    ></ion-textarea>
+  </ion-item>
+  <ion-item *ngFor="let requisito of tramite.requisitos; let in=index">
+    <ion-input
+      placeholder="Requisito"
+      type="text"
+      [(ngModel)]="tramite.requisitos[in].valor"
+    ></ion-input>
+  </ion-item>
+  <ion-button class="save" expand="block" fill="clear" (click)="add()"
+    >Añadir Requisito</ion-button
+  >
+  <ion-button class="save" expand="block" (click)="save_tramite()"
+    >Guardar</ion-button
+  >
+</ion-content>

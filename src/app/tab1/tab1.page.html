@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button menu="first"></ion-menu-button>
+      <ion-menu-button menu="first" color="cp-two"></ion-menu-button>
     </ion-buttons>
     <ion-title> Noticias </ion-title>
   </ion-toolbar>
@@ -10,7 +10,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Noticias</ion-title>
+      <ion-title size="large" color="cp-two">Noticias</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-card *ngFor="let noticia of noticias">
@@ -22,9 +22,11 @@
 
     <ion-card-content> {{noticia.contenido}} </ion-card-content>
   </ion-card>
+  
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="mostrar_modal()">
+    <ion-fab-button size="small" color="cp-two" (click)="mostrar_modal()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
 </ion-content>

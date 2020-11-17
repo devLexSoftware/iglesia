@@ -63,6 +63,12 @@ export class AppComponent {
       header: "Selecciona la ciudad dentro del catalogo",
       buttons: [
         {
+          text: "Puebla",
+          handler: () => {
+            localStorage.setItem("ciudad", "puebla");
+          },
+        },
+        {
           text: "Chihuahua",
           handler: () => {
             localStorage.setItem("ciudad", "chihuahua");
@@ -72,18 +78,6 @@ export class AppComponent {
           text: "Saltillo",
           handler: () => {
             localStorage.setItem("ciudad", "saltillo");
-          },
-        },
-        {
-          text: "Guadalajara",
-          handler: () => {
-            localStorage.setItem("ciudad", "guadalajara");
-          },
-        },
-        {
-          text: "Ciudad de Mexico",
-          handler: () => {
-            localStorage.setItem("ciudad", "cdmx");
           },
         },
         {

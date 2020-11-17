@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { LoginPageRoutingModule } from './login-routing.module';
-import { LoginPage } from './login.page';
+import { MeronitasMxPageRoutingModule } from './meronitas-mx-routing.module';
+import { MeronitasMxPage } from './meronitas-mx.page';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -11,9 +12,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule,
+    MeronitasMxPageRoutingModule,
     FontAwesomeModule
   ],
-  declarations: [LoginPage]
+  providers: [InAppBrowser],
+  declarations: [MeronitasMxPage]
 })
-export class LoginPageModule {}
+export class MeronitasMxPageModule {}

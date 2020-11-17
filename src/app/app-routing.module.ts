@@ -7,13 +7,11 @@ const routes: Routes = [
     loadChildren: () =>
       import("./tabs/tabs.module").then((m) => m.TabsPageModule),
   },
-
   {
     path: "login",
     loadChildren: () =>
       import("./pages/login/login.module").then((m) => m.LoginPageModule),
   },
-
   {
     path: "misal",
     loadChildren: () =>
@@ -97,6 +95,14 @@ const routes: Routes = [
     path: "aforo/:id",
     loadChildren: () =>
       import("./pages/aforo/aforo.module").then((m) => m.AforoPageModule),
+  },
+  {
+    path: 'contacto',
+    loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
+  },
+  {
+    path: 'meronitas-mx',
+    loadChildren: () => import('./pages/meronitas-mx/meronitas-mx.module').then( m => m.MeronitasMxPageModule)
   },
 ];
 @NgModule({

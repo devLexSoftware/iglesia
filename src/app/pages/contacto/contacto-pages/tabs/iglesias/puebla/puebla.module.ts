@@ -1,19 +1,19 @@
-import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TabsPageRoutingModule } from './tabs-routing.module';
-import { TabsPage } from './tabs.page';
+import { IonicModule } from '@ionic/angular';
+import { PueblaPageRoutingModule } from './puebla-routing.module';
+import { PueblaPage } from './puebla.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule,
+    IonicModule,
+    PueblaPageRoutingModule,
     FontAwesomeModule
   ],
-  declarations: [TabsPage]
+  declarations: [PueblaPage]
 })
-export class TabsPageModule {}
+export class PueblaPageModule {}

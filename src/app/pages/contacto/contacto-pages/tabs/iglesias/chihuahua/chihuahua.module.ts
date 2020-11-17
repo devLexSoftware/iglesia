@@ -1,19 +1,20 @@
-import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TabsPageRoutingModule } from './tabs-routing.module';
-import { TabsPage } from './tabs.page';
+import { IonicModule } from '@ionic/angular';
+import { ChihuahuaPageRoutingModule } from './chihuahua-routing.module';
+import { ChihuahuaPage } from './chihuahua.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule,
+    IonicModule,
+    ChihuahuaPageRoutingModule,
     FontAwesomeModule
   ],
-  declarations: [TabsPage]
+  declarations: [ChihuahuaPage]
 })
-export class TabsPageModule {}
+export class ChihuahuaPageModule {}

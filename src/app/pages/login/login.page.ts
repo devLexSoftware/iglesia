@@ -6,6 +6,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
   styleUrls: ["./login.page.scss"],
 })
 export class LoginPage implements OnInit {
+  
   user = {
     email: "",
     password: "",
@@ -15,7 +16,11 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
 
-  save() {
+  save()
+  {
+    // console.log(this.user.email);
+    // console.log(this.user.password);
+
     this.afAuth.signInWithEmailAndPassword(this.user.email, this.user.password);
   }
 }

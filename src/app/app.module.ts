@@ -15,6 +15,12 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { FormsModule } from "@angular/forms";
 
+/* FA */
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyA2n152e6anVaXHRR349bXIwbpUF6DUT0k",
   authDomain: "iglesia-e7b45.firebaseapp.com",
@@ -36,6 +42,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     FormsModule,
+    FontAwesomeModule
   ],
   providers: [
     StatusBar,
@@ -45,4 +52,8 @@ export const firebaseConfig = {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule
+{
+  constructor(library: FaIconLibrary)
+  {  library.addIconPacks(fas, fab, far); }
+}

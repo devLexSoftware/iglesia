@@ -1,10 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.meronitas" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Meronitas</name>
-    <description>An awesome Ionic/Cordova app.</description>
+    <description>Aplicación de Iglesia Católica</description>
     <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />

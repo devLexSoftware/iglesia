@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    // component: ContactoPage
     loadChildren: () => import('./contacto-pages/tabs/tabs.module').then( m => m.TabsPageModule)
   }
 ];

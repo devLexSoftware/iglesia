@@ -1,0 +1,29 @@
+Users
+{"rol":"admin"}
+{"rol":"cliente"}
+
+Lugares
+{"disponibles":15,"fecha":"2020-11-14T16:23:32.271-06:00","asientos":15}
+{"asientos":12,"fecha":"2020-11-18T04:27:06.909-06:00","disponibles":"12"}
+{"asientos":30,"fecha":"2020-11-16T02:55:35.737-06:00","disponibles":29,"reservaciones":[{"id_user":"f9flVTb1A3Ol9WfXmN9tazo4NR02"}]}
+{"asientos":20,"fecha":"2020-11-20T13:51:00.745-06:00","disponibles":20}
+
+Trámites
+{"titulo":"Titulo de Prueba ","requisitos":[{"valor":"requisito "},{"valor":"requisito "}],"pasos":"Pasos del trámite "}
+{"pasos":"Jsjsjs","requisitos":[{"valor":"Nsksks"}],"titulo":"Jskks"}
+{"titulo":"afdfdfdf","requisitos":[{"valor":"dsadas"}],"pasos":"dfdfdsfdf"}
+{"requisitos":[{"valor":"Requisito 1 "},{"valor":"Requisito 2"}],"titulo":"Tramite de Prueba ","pasos":"Datos "}
+{"titulo":"sdsd","pasos":"sdsd","requisitos":[]}
+{"titulo":"dsdasd","pasos":"sdasd","requisitos":[{"valor":"sdasd"},{"valor":"dasdasd"}]}
+{"requisitos":[{"valor":"sdasdsa"},{"valor":"sdsad"},{"valor":"sdsadasdsds"}],"titulo":"sdasdas","pasos":"sdsadas"}
+
+Misales
+{"titulo":"Misal de Prueba ","texto":"Texto Misal","link":"_1otQrcaO0k","leccionario":"Texto Misal "}
+{"leccionario":"texto prueba ","link":"aK3CLN2UOog","titulo":"misal prueba","texto":"texto prueba "}
+
+Misas
+{"titulo":"Titulo de la Misa","link":"aK3CLN2UOog","texto":"Texto de la misa "}
+{"texto":"texto de la misa ","link":"o5mYXS8KFCY","titulo":"Titulo de la Misa "}
+
+Noticias
+...

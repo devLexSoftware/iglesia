@@ -3,6 +3,8 @@ import { ModalController } from "@ionic/angular";
 import { NuevaNoticiaPage } from "../pages/nueva-noticia/nueva-noticia.page";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { ActionSheetController } from "@ionic/angular";
+import { CiudadService } from "../services/ciudad.service";
+import { getLocaleDateFormat } from '@angular/common';
 
 @Component({
   selector: "app-tab1",
@@ -10,19 +12,22 @@ import { ActionSheetController } from "@ionic/angular";
   styleUrls: ["tab1.page.scss"],
 })
 export class Tab1Page implements OnInit {
+  
   noticias = [];
 
   constructor(
     private modalCtrl: ModalController,
-    private anFS: AngularFirestore,
-    public actionSheetController: ActionSheetController
+    private angularFirestore: AngularFirestore,
+    public actionSheetController: ActionSheetController,
+    private ciudadService: CiudadService
   ) {}
 
-  ngOnInit() {
-    if (!localStorage.getItem("ciudad")) {
-      this.presentActionSheet();
-    }
-    this.anFS
+  ngOnInit()
+  {
+    if (!localStorage.getItem("selectedCity"))
+    { this.ciudadService.showCitiesToSelect(); }
+
+    this.angularFirestore
       .collection("noticias")
       .snapshotChanges()
       .subscribe((data) => {
@@ -39,46 +44,5 @@ export class Tab1Page implements OnInit {
     });
 
     await modal.present();
-  }
-
-  async presentActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      header: "Selecciona la ciudad dentro del catalogo",
-      buttons: [
-        {
-          text: "Chihuahua",
-          handler: () => {
-            localStorage.setItem("ciudad", "chihuahua");
-          },
-        },
-        {
-          text: "Saltillo",
-          handler: () => {
-            localStorage.setItem("ciudad", "saltillo");
-          },
-        },
-        {
-          text: "Guadalajara",
-          handler: () => {
-            localStorage.setItem("ciudad", "guadalajara");
-          },
-        },
-        {
-          text: "Ciudad de Mexico",
-          handler: () => {
-            localStorage.setItem("ciudad", "cdmx");
-          },
-        },
-        {
-          text: "Cancel",
-          icon: "close",
-          role: "cancel",
-          handler: () => {
-            console.log("Cancel clicked");
-          },
-        },
-      ],
-    });
-    await actionSheet.present();
   }
 }

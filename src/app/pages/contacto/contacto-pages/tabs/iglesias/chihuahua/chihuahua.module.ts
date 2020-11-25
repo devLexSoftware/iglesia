@@ -6,7 +6,6 @@ import { ChihuahuaPageRoutingModule } from './chihuahua-routing.module';
 import { ChihuahuaPage } from './chihuahua.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-
 @NgModule({
   imports: [
     CommonModule,

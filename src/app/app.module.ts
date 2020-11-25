@@ -21,16 +21,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyA2n152e6anVaXHRR349bXIwbpUF6DUT0k",
-  authDomain: "iglesia-e7b45.firebaseapp.com",
-  databaseURL: "https://iglesia-e7b45.firebaseio.com",
-  projectId: "iglesia-e7b45",
-  storageBucket: "iglesia-e7b45.appspot.com",
-  messagingSenderId: "734909831721",
-  appId: "1:734909831721:web:70f2c58ee3b6f48980da38",
-  measurementId: "G-EX7EDPXXL1",
-};
+import { environment } from "../environments/environment";
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,7 +30,7 @@ export const firebaseConfig = {
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     FormsModule,
     FontAwesomeModule

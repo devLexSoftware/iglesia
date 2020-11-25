@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
-
 import { Platform } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
 import { AngularFireAuth } from "@angular/fire/auth";
-import { AngularFirestore } from "@angular/fire/firestore";
 import { Router } from "@angular/router";
 import { ActionSheetController } from "@ionic/angular";
+
+import { CiudadService } from "../app/services/ciudad.service";
 
 @Component({
   selector: "app-root",
@@ -18,78 +18,39 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private afAuth: AngularFireAuth,
-    private anFS: AngularFirestore,
+    private angularFireAuth: AngularFireAuth,
     private router: Router,
-    public actionSheetController: ActionSheetController
-  ) {
+    public actionSheetController: ActionSheetController,
+    private ciudadService: CiudadService
+  )
+  {
     this.initializeApp();
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
+
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      this.afAuth.authState.subscribe((user) => {
-        if (user) {
-          this.anFS
-            .collection("users")
-            .doc(user.uid)
-            .get()
-            .subscribe((data) => {
-              let rol = data.data().rol;
-              if (rol === "admin") {
-                localStorage.setItem("rol", "admin");
-                localStorage.setItem("id", data.id);
-              }
-              if (rol === "cliente") {
-                localStorage.setItem("rol", "cliente");
-                localStorage.setItem("id", data.id);
-              }
-              this.router.navigateByUrl(`/tabs`);
-            });
-        } else this.router.navigateByUrl(`/login`);
-      });
+      const loggedUser = localStorage.getItem('loggedUser');
+
+      if (!loggedUser) {
+        this.router.navigateByUrl(`/login`);
+        return;
+      }
+
+      this.router.navigateByUrl(`/tabs`);
     });
   }
 
   logout() {
-    this.afAuth.signOut();
+    this.angularFireAuth.signOut().then(() => {
+      localStorage.removeItem('loggedUser');
+      localStorage.removeItem('selectedCity');
+      this.router.navigateByUrl(`/login`);
+    });
   }
 
-  async presentActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      header: "Selecciona la ciudad dentro del catalogo",
-      buttons: [
-        {
-          text: "Puebla",
-          handler: () => {
-            localStorage.setItem("ciudad", "puebla");
-          },
-        },
-        {
-          text: "Chihuahua",
-          handler: () => {
-            localStorage.setItem("ciudad", "chihuahua");
-          },
-        },
-        {
-          text: "Saltillo",
-          handler: () => {
-            localStorage.setItem("ciudad", "saltillo");
-          },
-        },
-        {
-          text: "Cancel",
-          icon: "close",
-          role: "cancel",
-          handler: () => {
-            console.log("Cancel clicked");
-          },
-        },
-      ],
-    });
-    await actionSheet.present();
-  }
+  showCitiesToSelect = () => this.ciudadService.showCitiesToSelect();
 }

@@ -34,7 +34,7 @@
     "@ionic/angular": "^5.4.4",
     "cordova-android": "8.1.0",
     "cordova-browser": "6.0.0",
-    "cordova-ios": "5.1.1",
+    "cordova-ios": "6.1.1",
     "cordova-plugin-camera": "^5.0.1",
     "cordova-plugin-inappbrowser": "^4.0.0",
     "firebase": "^7.13.1",
@@ -92,8 +92,8 @@
     },
     "platforms": [
       "browser",
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
